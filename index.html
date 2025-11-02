@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haripriya Industries - Premium Cuddapah Stone Products</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #f8f9fa;
+      }
+
+      header {
+        background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
+        color: white;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 1px;
+      }
+
+      .logo-accent {
+        color: #d4a574;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+        transition: all 0.3s ease;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        color: #d4a574;
+      }
+
+      /* Hamburger Menu Styles */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+        border-radius: 3px;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+
+      .hero {
+        background: linear-gradient(
+            rgba(26, 58, 82, 0.85),
+            rgba(45, 95, 126, 0.85)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="dots" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="3" fill="%23d4a574" opacity="0.2"/></pattern></defs><rect fill="%231a3a52" width="1200" height="600"/><rect fill="url(%23dots)" width="1200" height="600"/></svg>');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 120px 20px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        letter-spacing: -1px;
+      }
+
+      .hero .tagline {
+        font-size: 22px;
+        margin-bottom: 30px;
+        color: #d4a574;
+        font-weight: 500;
+      }
+
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 35px;
+        opacity: 0.95;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 35px;
+        background: #d4a574;
+        color: #1a3a52;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .btn:hover {
+        background: #e8b88a;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #1a3a52;
+        font-weight: 700;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 60px;
+        color: #666;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .product-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s;
+        border-top: 4px solid #d4a574;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .product-image-placeholder {
+        width: 100%;
+        height: 220px;
+        background: linear-gradient(135deg, #ecf0f1 0%, #dfe6e9 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+        color: #d4a574;
+      }
+
+      .product-content {
+        padding: 25px;
+      }
+
+      .product-content h3 {
+        color: #1a3a52;
+        margin-bottom: 12px;
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .product-content p {
+        color: #555;
+        margin-bottom: 15px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .product-features {
+        background: #f8f9fa;
+        padding: 12px;
+        border-radius: 4px;
+        font-size: 13px;
+        color: #666;
+      }
+
+      .features-section {
+        background: white;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+      }
+
+      .feature-item {
+        text-align: center;
+        padding: 0;
+      }
+
+      .feature-icon {
+        font-size: 52px;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+
+      .feature-item h3 {
+        color: #1a3a52;
+        margin-bottom: 12px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .feature-item p {
+        color: #666;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      /* About Section */
+      .about-section {
+        background: white;
+        padding: 80px 0;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .about-text h3 {
+        color: #d4a574;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+
+      .about-text h2 {
+        color: #1a3a52;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .about-text p {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .about-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+        padding-top: 40px;
+        border-top: 1px solid #eee;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        color: #d4a574;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .stat-label {
+        color: #666;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .about-image {
+        background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
+        border-radius: 8px;
+        padding: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 400px;
+      }
+
+      .about-image-icon {
+        font-size: 120px;
+        color: #d4a574;
+        opacity: 0.3;
+      }
+
+      /* Reviews Section */
+      .reviews-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .review-card {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        border-left: 4px solid #d4a574;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .review-stars {
+        color: #d4a574;
+        font-size: 18px;
+        margin-bottom: 12px;
+        letter-spacing: 2px;
+      }
+
+      .review-text {
+        color: #555;
+        font-style: italic;
+        margin-bottom: 15px;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .review-author {
+        font-weight: 600;
+        color: #1a3a52;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      .review-role {
+        color: #999;
+        font-size: 12px;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        background: white;
+        padding: 80px 0;
+      }
+
+      .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: #f8f9fa;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .faq-question {
+        padding: 20px;
+        background: #f8f9fa;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s;
+        font-weight: 600;
+        color: #1a3a52;
+        user-select: none;
+      }
+
+      .faq-question:hover {
+        background: #e8e8e8;
+        color: #d4a574;
+      }
+
+      .faq-toggle {
+        font-size: 20px;
+        color: #d4a574;
+        transition: transform 0.3s;
+      }
+
+      .faq-item.active .faq-toggle {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        color: #555;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 20px;
+        max-height: 500px;
+      }
+
+      .quote-section {
+        background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+      }
+
+      .quote-section h2 {
+        margin-bottom: 15px;
+        font-size: 36px;
+        font-weight: 700;
+      }
+
+      .quote-section p {
+        margin-bottom: 40px;
+        font-size: 18px;
+        opacity: 0.95;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        animation: fadeIn 0.3s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .modal-content {
+        background: white;
+        margin: 50px auto;
+        padding: 0;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 600px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        animation: slideDown 0.3s;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .modal-header {
+        background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .modal-header h2 {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .close {
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .close:hover {
+        color: #d4a574;
+      }
+
+      .modal-body {
+        padding: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #1a3a52;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        font-family: inherit;
+        transition: border 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #d4a574;
+        box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .form-submit {
+        width: 100%;
+        padding: 14px;
+        background: #d4a574;
+        color: #1a3a52;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .form-submit:hover {
+        background: #e8b88a;
+      }
+
+      .success-message {
+        display: none;
+        background: #d4f1d4;
+        color: #155724;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        border-left: 4px solid #28a745;
+      }
+
+      .contact-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .contact-item {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+
+      .contact-item-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+
+      .contact-item strong {
+        color: #1a3a52;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .contact-item p {
+        color: #666;
+      }
+
+      footer {
+        background: #1a3a52;
+        color: white;
+        text-align: center;
+        padding: 30px;
+      }
+
+      footer p {
+        margin-bottom: 5px;
+      }
+
+      /* Mobile Responsive Styles */
+      @media (max-width: 768px) {
+        nav ul {
+          position: fixed;
+          left: -100%;
+          top: 70px;
+          flex-direction: column;
+          background: linear-gradient(135deg, #1a3a52 0%, #2d5f7e 100%);
+          width: 100%;
+          text-align: center;
+          transition: left 0.3s ease;
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.15);
+          padding: 20px 0;
+          gap: 0;
+        }
+
+        nav ul li {
+          padding: 15px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav ul li:last-child {
+          border-bottom: none;
+        }
+
+        nav ul.active {
+          left: 0;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .hero .tagline {
+          font-size: 18px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        .section-title {
+          font-size: 32px;
+        }
+
+        .section {
+          padding: 60px 0;
+        }
+
+        .products-grid,
+        .features-grid,
+        .reviews-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .modal-content {
+          width: 95%;
+          margin: 20px auto;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .about-image {
+          min-height: 250px;
+        }
+
+        .about-stats {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 28px;
+        }
+
+        .hero .tagline {
+          font-size: 16px;
+        }
+
+        .section-title {
+          font-size: 26px;
+        }
+
+        .about-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">
+            HARIPRIYA <span class="logo-accent">INDUSTRIES</span>
+          </div>
+          <ul id="navMenu">
+            <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#products" onclick="closeMenu()">Products</a></li>
+            <li><a href="#services" onclick="closeMenu()">Services</a></li>
+            <li><a href="#reviews" onclick="closeMenu()">Reviews</a></li>
+            <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+          </ul>
+          <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Premium Cuddapah Stone Solutions</h1>
+        <div class="tagline">Excellence in Every Block</div>
+        <p>
+          Industry-leading quality materials for construction, architecture, and
+          commercial projects
+        </p>
+        <button class="btn" onclick="scrollToProducts()">
+          Explore Our Products
+        </button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Haripriya Industries</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Who We Are</h3>
+            <h2>Premium Stone Solutions Since Day One</h2>
+            <p>
+              Haripriya Industries is a leading supplier of premium Cuddapah
+              stone materials, dedicated to providing exceptional quality and
+              service to customers across residential, commercial, and
+              industrial sectors.
+            </p>
+            <p>
+              With years of expertise in stone cutting, finishing, and
+              logistics, we have built a reputation for excellence, reliability,
+              and customer-focused service. Our commitment to quality and
+              innovation sets us apart in the industry.
+            </p>
+            <p>
+              We believe that every stone should reflect perfection. From
+              precision cutting to careful delivery, we ensure that your project
+              receives the finest materials and attention to detail.
+            </p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Happy Clients</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">40+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Quality Assured</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <div class="about-image-icon">🏭</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+      <div class="container">
+        <h2 class="section-title">Our Products</h2>
+        <p class="section-subtitle">
+          High-quality Cuddapah stone tailored to your specific needs
+        </p>
+        <div class="products-grid">
+          <div class="product-card">
+            <img
+              src="./Leather Finish.png"
+              alt="Leather Finished Kadapa Stone"
+              class="product-image"
+            />
+            <div class="product-content">
+              <h3>Leather Finished Stone</h3>
+              <p>
+                Elegantly textured leather finish for contemporary and classic
+                interiors. Provides an exceptionally smooth, refined surface.
+              </p>
+              <div class="product-features">
+                <strong>✓</strong> Slip-resistant • Anti-skid properties •
+                Luxurious appearance
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="./calibration.webp" class="product-image" />
+            <div class="product-content">
+              <h3>Calibrated Sizes</h3>
+              <p>
+                Precision-engineered stone blocks with exact dimensional
+                specifications. Ensures perfect alignment and professional
+                installation.
+              </p>
+              <div class="product-features">
+                <strong>✓</strong> Precise dimensions • Consistent thickness •
+                Ready to install
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="./cobbels.png" class="product-image" />
+            <div class="product-content">
+              <h3>Cobbels</h3>
+              <p>
+                Cobble stones are naturally rounded, hand-cut or machine-cut
+                stones perfect for pathways, driveways, patios, garden edges,
+                and landscaping.
+              </p>
+              <div class="product-features">
+                <strong>✓</strong>Natural beauty - Long-lasting -
+                Maintenance-free
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="./rough.webp"
+              alt="Rough Kadapa Stone Blocks"
+              class="product-image"
+            />
+            <div class="product-content">
+              <h3>Rough Material</h3>
+              <p>
+                Raw Cuddapah stone blocks ideal for bulk projects and custom
+                finishing applications. Wholesale pricing available.
+              </p>
+              <div class="product-features">
+                <strong>✓</strong> Natural texture • Wholesale rates • Large
+                quantities
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="./polish.jpg" class="product-image" />
+            <div class="product-content">
+              <h3>Polished Finish</h3>
+              <p>
+                Mirror-like polished surface for premium architectural projects.
+                Exudes luxury and durability in high-end installations.
+              </p>
+              <div class="product-features">
+                <strong>✓</strong> High-gloss finish • Premium appearance •
+                Long-lasting
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="./image (3).png" class="product-image" />
+            <div class="product-content">
+              <h3>Commercial Grade</h3>
+              <p>
+                Heavy-duty stone for industrial and commercial applications.
+                Built to withstand demanding environments and heavy traffic.
+              </p>
+              <div class="product-features">
+                <strong>✓</strong> Superior durability • High strength • Bulk
+                pricing
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section features-section" id="services">
+      <div class="container">
+        <h2 class="section-title">Our Services & Expertise</h2>
+        <p class="section-subtitle">
+          Comprehensive solutions for all your stone requirements
+        </p>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">✂️</div>
+            <h3>Precision Cutting</h3>
+            <p>
+              Advanced cutting technology ensures exact dimensions and flawless
+              cuts. Certified expertise in handling complex specifications.
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">✨</div>
+            <h3>Multiple Finishes</h3>
+            <p>
+              Comprehensive finishing options including leather, polished,
+              honed, textured, and brushed surfaces. Custom finishes available.
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">📦</div>
+            <h3>Bulk Supply & Logistics</h3>
+            <p>
+              Efficient wholesale operations with competitive pricing.
+              Professional logistics management for timely delivery worldwide.
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Turnaround</h3>
+            <p>
+              Streamlined production processes to meet urgent project timelines.
+              Flexible scheduling for expedited orders.
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">✅</div>
+            <h3>Quality Assurance</h3>
+            <p>
+              Rigorous quality control at every stage. ISO-certified processes
+              ensure consistent excellence and customer satisfaction.
+            </p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">🚚</div>
+            <h3>Reliable Delivery</h3>
+            <p>
+              Secure packaging and professional transportation. Real-time
+              tracking and guaranteed safe delivery of your materials.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <h2 class="section-title">Customer Reviews</h2>
+        <p class="section-subtitle">What our satisfied clients say about us</p>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "Exceptional quality and on-time delivery. The precision cutting
+              was perfect for our project. Highly recommend Haripriya Industries
+              for any stone requirements!"
+            </p>
+            <p class="review-author">Maheshwar Gupta</p>
+            <p class="review-role">Contracter</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "Outstanding professionalism and quality materials. The
+              leather-finished stones look stunning. The customer service team
+              was responsive and helpful throughout."
+            </p>
+            <p class="review-author">E Vikram</p>
+            <p class="review-role">Railway Contracter</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "We've been ordering from them for years. Consistent quality,
+              competitive pricing, and excellent bulk order handling. They are
+              our preferred supplier!"
+            </p>
+            <p class="review-author">Vikram Construction</p>
+            <p class="review-role">Commercial Developer</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "Perfect calibration and no wastage. Their custom sizing service
+              saved us time and money. Best stone supplier we've worked with!"
+            </p>
+            <p class="review-author">Anjali Builders</p>
+            <p class="review-role">Construction Manager</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "Their polished finish stones transformed our commercial space
+              beautifully. Professional, reliable, and truly committed to
+              customer satisfaction."
+            </p>
+            <p class="review-author">Hotel Amenities Ltd</p>
+            <p class="review-role">Facility Manager</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "From quote to delivery, the entire process was seamless. Quality
+              materials, competitive pricing, and excellent customer service.
+              Highly satisfied!"
+            </p>
+            <p class="review-author">Ravi Enterprises</p>
+            <p class="review-role">Retail Owner</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Common questions about our products and services
+        </p>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>What is the durability of Cuddapah stone?</span>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              Cuddapah stone is highly durable and has been used for centuries
+              in construction. It can last for generations with minimal
+              maintenance. The stone has excellent compression strength and is
+              resistant to weathering, making it ideal for both interior and
+              exterior applications.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>What finishes are available?</span>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              We offer multiple finish options including leather finish
+              (textured and slip-resistant), polished finish (high-gloss), honed
+              finish (semi-smooth), brushed finish, and natural finish. Custom
+              finishes can also be created based on your specific requirements.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span
+                >How are stones calibrated and what sizes are available?</span
+              >
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              Our calibration process ensures exact thickness and uniform
+              dimensions for perfect installation. We offer standard sizes from
+              12"x12" to 24"x48", and can customize sizes according to your
+              project specifications. All calibrated stones come with consistent
+              thickness for seamless installation.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>What is the minimum order quantity?</span>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              We accommodate orders of all sizes, from small residential
+              projects to large commercial supplies. Minimum order quantities
+              vary based on product type and finishes. For small orders, please
+              contact our sales team for special pricing. Bulk orders receive
+              attractive wholesale discounts.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>How should Cuddapah stone be maintained?</span>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              Cuddapah stone requires minimal maintenance. Regular sweeping and
+              occasional wet cleaning with mild detergent is sufficient. For
+              polished finishes, avoid acidic cleaners and use pH-neutral stone
+              cleaners. Sealing is recommended for interior applications to
+              protect against stains.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>What is your delivery timeline?</span>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              Standard delivery is 7-14 days depending on order quantity and
+              location. Expedited orders can be processed within 3-5 days at an
+              additional charge. International shipments take 15-30 days. We
+              ensure safe packaging and timely delivery to your location.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <span>Do you offer bulk discounts and wholesale pricing?</span>
+              <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+              Yes, we offer competitive wholesale pricing for bulk orders. The
+              discount percentage varies based on order quantity and
+              specifications. For large projects, we can provide volume-based
+              pricing structures. Contact our sales team to discuss your bulk
+              requirements and get customized pricing.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+      <div class="container">
+        <h2>Request a Custom Quote</h2>
+        <p>Get personalized pricing for your specific project requirements</p>
+        <button class="btn" onclick="openQuoteForm()">Request Quote Now</button>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Information</h2>
+        <p class="section-subtitle">
+          Reach out to our team for inquiries and support
+        </p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <strong>Phone</strong>
+            <p>+91 9573901445<br />Available 24/7</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📧</div>
+            <strong>Email</strong>
+            <p>
+              info@haripriyaindustries.com<br />support@haripriyaindustries.com
+            </p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <strong>Location</strong>
+            <p>Cuddapah, Andhra Pradesh<br />India</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Haripriya Industries. All rights reserved.</p>
+        <p>Premium Cuddapah Stone - Excellence in Every Block</p>
+      </div>
+    </footer>
+
+    <!-- Quote Form Modal -->
+    <div id="quoteModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Request a Quote</h2>
+          <span class="close" onclick="closeQuoteForm()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div id="successMessage" class="success-message">
+            ✓ Thank you! Your quote request has been submitted successfully.
+            We'll contact you within 24 hours.
+          </div>
+          <form id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label for="product">Product Type *</label>
+              <select id="product" name="product" required>
+                <option value="">Select a product</option>
+                <option value="leather-finished">Leather Finished Stone</option>
+                <option value="calibrated">Calibrated Sizes</option>
+                <option value="custom">Custom Sizes</option>
+                <option value="rough">Rough Material</option>
+                <option value="polished">Polished Finish</option>
+                <option value="commercial">Commercial Grade</option>
+                <option value="other">Other/Multiple Products</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="quantity"
+                >Estimated Quantity (in sqft or units) *</label
+              >
+              <input
+                type="text"
+                id="quantity"
+                name="quantity"
+                placeholder="e.g., 500 sqft or 20 blocks"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="dimensions"
+                >Required Dimensions (if applicable)</label
+              >
+              <input
+                type="text"
+                id="dimensions"
+                name="dimensions"
+                placeholder="e.g., 24x12x3 inches"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="finish">Preferred Finish Type</label>
+              <input
+                type="text"
+                id="finish"
+                name="finish"
+                placeholder="e.g., Leather, Polished, Natural"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message"
+                >Project Details & Special Requirements</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us about your project, deadline, location, and any special requirements..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">
+              Submit Quote Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Hamburger Menu Toggle
+      function toggleMenu() {
+        const navMenu = document.getElementById("navMenu");
+        const hamburger = document.getElementById("hamburger");
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      }
+
+      // Close menu when clicking on a link
+      function closeMenu() {
+        const navMenu = document.getElementById("navMenu");
+        const hamburger = document.getElementById("hamburger");
+        navMenu.classList.remove("active");
+        hamburger.classList.remove("active");
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const navMenu = document.getElementById("navMenu");
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.querySelector("nav");
+
+        if (!nav.contains(event.target)) {
+          navMenu.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      });
+
+      function openQuoteForm() {
+        document.getElementById("quoteModal").style.display = "block";
+        document.getElementById("quoteForm").style.display = "block";
+        document.getElementById("successMessage").style.display = "none";
+      }
+
+      function closeQuoteForm() {
+        document.getElementById("quoteModal").style.display = "none";
+      }
+
+      function handleQuoteSubmit(event) {
+        event.preventDefault();
+
+        const formData = {
+          name: document.getElementById("name").value,
+          company: document.getElementById("company").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          product: document.getElementById("product").value,
+          quantity: document.getElementById("quantity").value,
+          dimensions: document.getElementById("dimensions").value,
+          finish: document.getElementById("finish").value,
+          message: document.getElementById("message").value,
+          timestamp: new Date().toLocaleString(),
+          pageUrl: window.location.href,
+        };
+
+        let quotes = JSON.parse(localStorage.getItem("quoteRequests")) || [];
+        quotes.push(formData);
+        localStorage.setItem("quoteRequests", JSON.stringify(quotes));
+
+        console.log("Quote Request Submitted:", formData);
+
+        document.getElementById("quoteForm").style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
+
+        document.getElementById("quoteForm").reset();
+
+        setTimeout(() => {
+          closeQuoteForm();
+          document.getElementById("quoteForm").style.display = "block";
+          document.getElementById("successMessage").style.display = "none";
+        }, 3000);
+      }
+
+      function scrollToProducts() {
+        document
+          .getElementById("products")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      function toggleFAQ(element) {
+        const faqItem = element.parentElement;
+        faqItem.classList.toggle("active");
+      }
+
+      window.onclick = function (event) {
+        const modal = document.getElementById("quoteModal");
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>
